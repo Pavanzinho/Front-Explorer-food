@@ -17,17 +17,23 @@ export const Container = styled.div`
         align-items: center;
         
         .bannerImg{
-            /* background-image: url("../../../src/assets/bannerImg.png"); */
-
-            svg{
-                
-            }
+            background-image: url("../../../src/assets/bannerImg.png");
             width: 19rem;
             height: 14rem;
             position: absolute;
             bottom: 0;
             left:-25px;
             background-repeat: no-repeat;
+
+            img{
+                
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                    
+                
+            }
+
         }
 
         .bannerText{ 
@@ -150,16 +156,23 @@ export const Container = styled.div`
             background-color: ${({ theme }) => theme.COLORS.DARK_DARK_700};
             height: 28rem;
             margin: 16.4rem 12rem 6.2rem ;
+            background-color:#00131C;
 
             .bannerImg{
-                /* background-image: url("../../../src/assets/bannerImg.svg"); */
-                width: 65rem;
-                height: 44rem;
-                position: absolute;
+                background-image: url("../../../src/assets/Banner.png");
+                width: 63rem;
+                height: 40rem;
+                
                 background-size:cover;
+                object-fit: cover;
+                position: absolute;
                 bottom: 0px;
                 left:-60px;
                 background-repeat: no-repeat;
+                
+                img{
+                    
+                }
         }
 
         .bannerText{ 

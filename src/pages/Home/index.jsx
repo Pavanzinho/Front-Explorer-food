@@ -141,7 +141,7 @@ export function Home() {
                 <section className="typeOfFoodList" >
                     <div className="buttonMoveForLeft">
                         <button onClick={handleTranslateForLeft1} type="button">
-                            <img src="../../src/assets/backImg.svg" alt="" />
+                            <img src="../../assets/fowardImg.svg" alt="" />
                         </button>
                     </div>
 
@@ -175,7 +175,7 @@ export function Home() {
                 <section className="typeOfFoodList" >
                     <div className="buttonMoveForLeft">
                         <button onClick={handleTranslateForLeft2} type="button">
-                            <img src="../../src/assets/backImg.svg" alt="" />
+                            <img src="../../assets/backImg.svg" alt="" />
                         </button>
                     </div>
 

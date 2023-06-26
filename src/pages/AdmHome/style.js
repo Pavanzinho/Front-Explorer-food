@@ -137,7 +137,7 @@ export const Container = styled.div`
         }   
     }
     
-    /* @media screen and (min-width:1300px){
+    @media screen and (min-width:1300px){
 
      
         .bannerContainer{
@@ -146,7 +146,7 @@ export const Container = styled.div`
             margin: 16.4rem 12rem 6.2rem ;
 
             .bannerImg{
-                background-image: url(../../src/assets/bannerImg.svg);
+                background-image: url("../../../src/assets/Banner.png");
                 width: 65rem;
                 height: 44rem;
                 position: absolute;
@@ -365,6 +365,6 @@ export const Container = styled.div`
                 }
             }
         }
-    }                                 */
+    }                                
 
 `                           

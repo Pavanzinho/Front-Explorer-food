@@ -13,8 +13,8 @@ export default createGlobalStyle`
     }
 
     body{
-        background-color: ${({theme})=>theme.COLORS.DARK_DARK_400};
-        color: ${({theme})=>theme.COLORS.LIGHT_LIGHT_300};
+        background-color: ${({ theme }) => theme.COLORS.DARK_DARK_400};
+        color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_300};
         font-size: 1.6rem;
         width: 100%;
         overflow-x: hidden;

@@ -137,7 +137,7 @@ export const Container = styled.div`
         }   
     }
     
-    @media screen and (min-width:1300px){
+    /* @media screen and (min-width:1300px){
 
      
         .bannerContainer{
@@ -365,6 +365,6 @@ export const Container = styled.div`
                 }
             }
         }
-    }                                
+    }                                 */
 
 `                           

@@ -24,18 +24,16 @@ export const Container = styled.div`
             bottom: 0;
             left:-25px;
             background-repeat: no-repeat;
-            
-            @media only screen and (min-width:1300px){
-                
+            @media(min-width: 1300px) {       
                 background-image: url("../../../src/assets/Banner.png");
                 width: 65rem;
                 height: 44rem;
-                position: absolute;
                 background-size:cover;
                 bottom: 0px;
                 left:-60px;
-                background-repeat: no-repeat;
+                
             }
+            
             
             
         }

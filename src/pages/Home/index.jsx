@@ -119,7 +119,7 @@ export function Home() {
             <div className="bannerContainer">
                 <div className="bannerImg">
                     {/* <img src="../../../src/assets/bannerImg.png" alt="" /> */}
-                    
+
                     {/* <svg width="632" height="406" viewBox="0 0 632 406" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <rect opacity="0.8" width="632" height="406" transform="matrix(-1 0 0 1 632 0)" fill="url(#pattern0)" />
                         <defs>
@@ -141,7 +141,11 @@ export function Home() {
                 <section className="typeOfFoodList" >
                     <div className="buttonMoveForLeft">
                         <button onClick={handleTranslateForLeft1} type="button">
-                            <img src="../../assets/fowardImg.svg" alt="" />
+                            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M11.7071 0.293122C12.0976 0.683646 12.0976 1.31681 11.7071 1.70734L2.41421 11.0002L11.7071 20.2931C12.0976 20.6836 12.0976 21.3168 11.7071 21.7073C11.3166 22.0979 10.6834 22.0979 10.2929 21.7073L0.292893 11.7073C-0.0976311 11.3168 -0.0976311 10.6836 0.292893 10.2931L10.2929 0.293122C10.6834 -0.0974022 11.3166 -0.0974022 11.7071 0.293122Z" fill="white" />
+                            </svg>
+
+
                         </button>
                     </div>
 
@@ -165,7 +169,10 @@ export function Home() {
 
                     <div className="buttonMoveForRight">
                         <button onClick={handleTranslateForRight1} type="button">
-                            <img src="../../src/assets/fowardImg.svg" alt="" />
+                            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M0.292893 0.293122C0.683417 -0.0974022 1.31658 -0.0974022 1.70711 0.293122L11.7071 10.2931C12.0976 10.6836 12.0976 11.3168 11.7071 11.7073L1.70711 21.7073C1.31658 22.0979 0.683417 22.0979 0.292893 21.7073C-0.0976311 21.3168 -0.0976311 20.6836 0.292893 20.2931L9.58579 11.0002L0.292893 1.70734C-0.0976311 1.31681 -0.0976311 0.683646 0.292893 0.293122Z" fill="white" />
+                            </svg>
+
                         </button>
                     </div>
                 </section>
@@ -175,7 +182,11 @@ export function Home() {
                 <section className="typeOfFoodList" >
                     <div className="buttonMoveForLeft">
                         <button onClick={handleTranslateForLeft2} type="button">
-                            <img src="../../assets/backImg.svg" alt="" />
+                            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M11.7071 0.293122C12.0976 0.683646 12.0976 1.31681 11.7071 1.70734L2.41421 11.0002L11.7071 20.2931C12.0976 20.6836 12.0976 21.3168 11.7071 21.7073C11.3166 22.0979 10.6834 22.0979 10.2929 21.7073L0.292893 11.7073C-0.0976311 11.3168 -0.0976311 10.6836 0.292893 10.2931L10.2929 0.293122C10.6834 -0.0974022 11.3166 -0.0974022 11.7071 0.293122Z" fill="white" />
+                            </svg>
+
+
                         </button>
                     </div>
 
@@ -198,7 +209,10 @@ export function Home() {
 
                     <div className="buttonMoveForRight">
                         <button onClick={handleTranslateForRight2} type="button">
-                            <img src="../../src/assets/fowardImg.svg" alt="" />
+                            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M0.292893 0.293122C0.683417 -0.0974022 1.31658 -0.0974022 1.70711 0.293122L11.7071 10.2931C12.0976 10.6836 12.0976 11.3168 11.7071 11.7073L1.70711 21.7073C1.31658 22.0979 0.683417 22.0979 0.292893 21.7073C-0.0976311 21.3168 -0.0976311 20.6836 0.292893 20.2931L9.58579 11.0002L0.292893 1.70734C-0.0976311 1.31681 -0.0976311 0.683646 0.292893 0.293122Z" fill="white" />
+                            </svg>
+
                         </button>
                     </div>
                 </section>
@@ -208,7 +222,11 @@ export function Home() {
                 <section className="typeOfFoodList" >
                     <div className="buttonMoveForLeft">
                         <button onClick={handleTranslateForLeft3} type="button">
-                            <img src="../../src/assets/backImg.svg" alt="" />
+                            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M11.7071 0.293122C12.0976 0.683646 12.0976 1.31681 11.7071 1.70734L2.41421 11.0002L11.7071 20.2931C12.0976 20.6836 12.0976 21.3168 11.7071 21.7073C11.3166 22.0979 10.6834 22.0979 10.2929 21.7073L0.292893 11.7073C-0.0976311 11.3168 -0.0976311 10.6836 0.292893 10.2931L10.2929 0.293122C10.6834 -0.0974022 11.3166 -0.0974022 11.7071 0.293122Z" fill="white" />
+                            </svg>
+
+
                         </button>
                     </div>
 
@@ -231,7 +249,10 @@ export function Home() {
 
                     <div className="buttonMoveForRight">
                         <button onClick={handleTranslateForRight3} type="button">
-                            <img src="../../src/assets/fowardImg.svg" alt="" />
+                            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M0.292893 0.293122C0.683417 -0.0974022 1.31658 -0.0974022 1.70711 0.293122L11.7071 10.2931C12.0976 10.6836 12.0976 11.3168 11.7071 11.7073L1.70711 21.7073C1.31658 22.0979 0.683417 22.0979 0.292893 21.7073C-0.0976311 21.3168 -0.0976311 20.6836 0.292893 20.2931L9.58579 11.0002L0.292893 1.70734C-0.0976311 1.31681 -0.0976311 0.683646 0.292893 0.293122Z" fill="white" />
+                            </svg>
+
                         </button>
                     </div>
                 </section>

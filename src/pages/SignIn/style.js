@@ -8,6 +8,9 @@ export const Container = styled.div`
     flex-direction: column;
     margin:0 auto;
     height: 100%;
+    @media ${device.desktop}{
+        max-width: none;
+    }
 
     .pageContainer{
 
@@ -15,9 +18,7 @@ export const Container = styled.div`
         flex-direction: column;
         padding: 15.8rem 4.7rem 0 6.5rem;
         height: 100%;
-
-
-
+        
         h1,input,label{
             font-family: 'Roboto', sans-serif;
         }
@@ -37,6 +38,13 @@ export const Container = styled.div`
                 font-weight: 700;
                 color: white;
             }
+            
+            @media ${device.desktop}{
+                display: flex;
+                align-items: center;
+                margin: 0 0 0 auto;
+
+            }
 
         }
 
@@ -49,6 +57,13 @@ export const Container = styled.div`
 
             h1{
                 display: none;
+                @media ${device.desktop}{
+                    display: block;
+                    font-family: 'Poppins',sans-serif;
+                    font-weight: 500;
+                    line-height: 4.48rem;
+                    font-size: 3.2rem;             
+                }
             }
 
             label{
@@ -75,24 +90,43 @@ export const Container = styled.div`
                 align-self: center;
 
             }
-        }
-    }
-    
-    @media ${device.desktop}{
-        max-width: none;
 
-        .pageContainer{
+            @media ${device.desktop}{
+                max-width: 60rem;
+                display: flex;
+                padding: 6.4rem;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 3.2rem;
+                background: ${({ theme }) => theme.COLORS.DARK_DARK_700};
+                border-radius: 16px;
+            }
+        }
+
+        @media ${device.desktop}{
             display: flex;
             flex-direction: row;
             height: 100vh;
             gap: 30rem;
             padding: 11rem 10.8rem 11rem 0;
             justify-content: center;
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+/*     
+    @media ${device.desktop}{
+       
+
+        .pageContainer{
             
             .titleContainer{
-                display: flex;
-                align-items: center;
-                margin: 0 0 0 auto;
                 
                 h1{
                     font-size: 4.2rem;
@@ -131,7 +165,7 @@ export const Container = styled.div`
             }
         }
 
-    }
+    } */
 
     
 `

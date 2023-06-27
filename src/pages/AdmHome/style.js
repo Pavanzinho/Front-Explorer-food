@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/global";
 
 export const Container = styled.div`
 
@@ -90,7 +91,12 @@ export const Container = styled.div`
         gap:2.4rem;
         font-family: 'Poppins', sans-serif;
         max-width: none;
-
+        @media ${device.desktop}{
+            margin: 0 12rem ;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+  
         .typeOfFoodList{
             margin:2.4rem 0;
             max-width: none;
@@ -169,28 +175,17 @@ export const Container = styled.div`
                 
                 }            
             }
-        }  
-        
-        @media(min-width: 1300px){
-            margin: 0 12rem ;
-            max-width: 100%;
-            overflow-x: hidden;
-   
-            h2{
-                font-size: 3.2rem;
-                font-weight: 500;
-                line-height: 4.48rem;
-            }
 
-            .typeOfFoodList{
+            @media ${device.desktop}{
+                
                 height: 52.9rem;
                 position: relative;
                 display: flex;
-
+    
                 button{
                     display: flex;
                 }
-
+    
                 .buttonMoveForRight{
                     button{
                         background: transparent;
@@ -208,7 +203,7 @@ export const Container = styled.div`
                         }
                     }
                 }
-
+        
                 .buttonMoveForLeft{
                     button{
                         background: transparent;
@@ -226,7 +221,7 @@ export const Container = styled.div`
                         }
                     }
                 }
-
+        
                 .cardsFoodContainer{
                     height: 100%;
                     max-height: 46.2rem;
@@ -234,7 +229,7 @@ export const Container = styled.div`
                     display: flex;
                     align-items: center;
                     position: relative;
-
+    
                         .admFoodCard{
                             display:flex;
                             flex-direction:column;
@@ -299,7 +294,7 @@ export const Container = styled.div`
                                         display:flex;
                                         
                                         span{
-
+    
                                             font-family: 'Roboto',sans-serif;
                                             color:#82F3FF;
                                             font-size:3.2rem;
@@ -313,7 +308,7 @@ export const Container = styled.div`
                                     align-items:center;
                                     font-size:1.4rem;
                                     flex-direction: row;
-
+    
                                     div{
                                         display: flex;
                                         flex-direction: row;
@@ -356,8 +351,17 @@ export const Container = styled.div`
                 }
             }
         }
+    }  
+       
+
+
+
         
-    }
+        
+        
+        
+        
+        
          
      
     

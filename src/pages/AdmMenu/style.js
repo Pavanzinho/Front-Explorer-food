@@ -100,6 +100,7 @@ export const Container = styled.div`
 
            
         }
+        
         .titleContainer{
                 display: flex;
                 gap:6.47px;
@@ -111,7 +112,7 @@ export const Container = styled.div`
                     line-height: 2rem;
                     font-weight: 700;
                 } 
-            }
+        }
 
         .textContainer{
           

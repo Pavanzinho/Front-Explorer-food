@@ -49,7 +49,9 @@ export const Container = styled.div`
                 display:flex;
                 align-items:center;
                 justify-content:center;
-                gap:5px
+                gap:5px;
+                color: #82F3FF;
+                
         
             }
     

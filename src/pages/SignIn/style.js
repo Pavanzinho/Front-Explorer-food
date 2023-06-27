@@ -114,58 +114,5 @@ export const Container = styled.div`
         }
         
     }
-    
-    
-    
-    
-    
-    
-/*     
-    @media ${device.desktop}{
-       
 
-        .pageContainer{
-            
-            .titleContainer{
-                
-                h1{
-                    font-size: 4.2rem;
-                    line-height: 4.9rem;
-                }
-
-                img{
-                    width: 5rem;
-                    height: 4.7rem;
-                }
-            }
-
-
-            form{
-            max-width: 60rem;
-            display: flex;
-            padding: 6.4rem;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 3.2rem;
-            background: ${({ theme }) => theme.COLORS.DARK_DARK_700};
-            border-radius: 16px;
-
-                h1{
-                    display: block;
-                    font-family: 'Poppins',sans-serif;
-                    font-weight: 500;
-                    line-height: 4.48rem;
-                    font-size: 3.2rem;
-                }
-           
-            
-
-           
-            }
-        }
-
-    } */
-
-    
 `

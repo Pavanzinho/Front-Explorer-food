@@ -12,6 +12,7 @@ import { useAuth } from "../../hooks/auth";
 import { useEffect } from "react";
 import { api } from "../../service/api";
 import { useLocation } from "react-router-dom";
+import Banner from "../../assets/Banner.png"
 
 
 
@@ -118,16 +119,7 @@ export function Home() {
 
             <div className="bannerContainer">
                 <div className="bannerImg">
-                    {/* <img src="../../../src/assets/bannerImg.png" alt="" /> */}
-
-                    {/* <svg width="632" height="406" viewBox="0 0 632 406" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                        <rect opacity="0.8" width="632" height="406" transform="matrix(-1 0 0 1 632 0)" fill="url(#pattern0)" />
-                        <defs>
-                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                <use href="#image0_5_1002" transform="scale(0.001 0.00155438)" />
-                            </pattern>
-                        </defs>
-                    </svg> */}
+                    <img src={Banner} alt="" />  
                 </div>
                 <div className="bannerText">
                     <h1>Sabores inegualáveis</h1>

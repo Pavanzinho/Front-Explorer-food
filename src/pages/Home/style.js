@@ -25,7 +25,7 @@ export const Container = styled.div`
         
 
         .bannerImg{   
-            background-image: url("../../src/assets/bannerImg.png");
+            
             width: 19rem;
             height: 14rem;
             position: absolute;
@@ -42,6 +42,12 @@ export const Container = styled.div`
                 bottom: 0px;
                 left:-60px;
                 background-repeat: no-repeat;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
 

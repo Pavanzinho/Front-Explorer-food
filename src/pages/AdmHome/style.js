@@ -58,32 +58,34 @@ export const Container = styled.div`
             min-width: 21rem;
             width: 35%;
             max-width: 42px;
-            h1{
-                font-size: 1.8rem;
-                line-height: 2.2rem;
-            }
-            p{
-                font-size: 1.2rem;
-                line-height: 1.6rem;
-            }
 
-            @media(min-width: 1300px){
+            @media ${device.desktop}{
                 position: absolute;
                 right: 10rem;
                 display: flex;
                 flex-direction: column;
                 min-width: 21rem;
                 max-width: 42rem;
-                
-                h1{
+            }
+            
+            h1{
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+                @media ${device.desktop}{
                     font-size: 4rem;
                     line-height: 5.6rem;
                 }
-                p{
+            }
+            
+            p{
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+                
+                @media ${device.desktop}{
                     font-size: 1.6rem;
                     line-height: 1.6rem;
                 }
-            }
+            }         
         }
         
 

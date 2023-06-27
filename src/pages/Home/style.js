@@ -16,34 +16,33 @@ export const Container = styled.div`
         display: flex;
         gap: 5px;
         align-items: center;
-
-        @media ${device.desktop}{
+        
+        @media(min-width: 1300px){
             background-color: ${({ theme }) => theme.COLORS.DARK_DARK_700};
             height: 28rem;
             margin: 16.4rem 12rem 6.2rem ;
         }
         
-
-        .bannerImg{   
-            
+        .bannerImg{
+            /* background-image: url("../../src/assets/bannerImg.png"); */
             width: 19rem;
-            height: 14rem;
+            height: 12rem;
             position: absolute;
             bottom: 0;
-            left:-25px;
+            left:-2.5rem;
             background-repeat: no-repeat;
             
-            @media ${device.desktop}{
-                background-image: url("../../../src/assets/Banner.png");;
-                width: 65rem;
-                height: 44rem;
-                position: absolute;
+            @media(min-width: 1300px) {       
+                /* background-image: url("../../../src/assets/Banner.png"); */
+                margin: 17.2rem 2.4rem 6.2rem 2.4rem;
+                width: 63rem;
+                height: 28rem;
                 background-size:cover;
+                position: absolute;
                 bottom: 0px;
-                left:-60px;
-                background-repeat: no-repeat;
+                left:-7.5rem;
+                bottom: -6.2rem;
             }
-
             img{
                 width: 100%;
                 height: 100%;
@@ -59,35 +58,35 @@ export const Container = styled.div`
             min-width: 21rem;
             width: 35%;
             max-width: 42px;
+            h1{
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+            }
+            p{
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+            }
 
-            @media ${device.desktop}{
+            @media(min-width: 1300px){
                 position: absolute;
                 right: 10rem;
                 display: flex;
                 flex-direction: column;
                 min-width: 21rem;
                 max-width: 42rem;
-            }
-
-            h1{
-                font-size: 1.8rem;
-                line-height: 2.2rem;
-                @media ${device.desktop}{
+                
+                h1{
                     font-size: 4rem;
                     line-height: 5.6rem;
                 }
-            }
-            
-            p{
-                font-size: 1.2rem;
-                line-height: 1.6rem;
-                @media ${device.desktop}{
+                p{
                     font-size: 1.6rem;
                     line-height: 1.6rem;
                 }
             }
         }
-   
+        
+
     }
     
     main{

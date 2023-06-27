@@ -14,7 +14,6 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
     }
-
     
     main{
         padding: 0 5.6rem 3.35rem;
@@ -121,8 +120,10 @@ export const Container = styled.div`
                 gap: 2.4rem;
                 align-items: center;
                 max-width: 28.7rem; 
+                min-width: 27rem;
                 justify-content: center; 
                 margin: auto;
+               
 
                 @media ${device.desktop}{
                     display: flex;
@@ -229,7 +230,7 @@ export const Container = styled.div`
                     width: 100%;
                     display: flex;
                     gap: 1.6rem;
-                    height: 3.8rem;
+                    height: 4.8rem;
 
                     @media ${device.desktop}{
                         width: 100%;
@@ -271,3 +272,42 @@ export const Container = styled.div`
         }               
     }
 `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .orderQuantity{
+//     width: 100%;
+//     display: flex;
+//     gap: 1.6rem;
+//     justify-content: center;
+    
+//     button{
+//         gap: 5px;
+//         height: 4.8rem;
+//         width: 100%;
+        
+//     }
+
+//     .foodQuantityAdjusterContainer{
+//         display: flex;
+//         align-items: center;
+//         gap: 1.56rem;
+
+//         .numbersQuantity{
+//             font-size: 2.2rem;
+//             line-height: 2.4rem;
+//         }
+//     }           
+// }

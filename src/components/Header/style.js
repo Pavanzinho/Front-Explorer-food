@@ -282,6 +282,7 @@ export const Container = styled.header`
                 width: 58.81rem;
                 background: ${({ theme }) => theme.COLORS.DARK_DARK_900};
                 display: none;
+               
 
                 @media ${device.desktop}{
                     min-height:4.8rem ;
@@ -291,14 +292,15 @@ export const Container = styled.header`
                     padding: 1.2rem 1.4rem;
                     gap: 8px;
                     border-radius: 5px;
-                    input{
-                            width: 100%;
-                            background: transparent;
-                            border: none;
-                        
-                    }
+                    
                 }
                 
+                input{
+                    width: 100%;
+                    background: transparent;
+                    border: none;
+                    
+                }
 
             }
 

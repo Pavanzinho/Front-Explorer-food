@@ -24,24 +24,29 @@ export const Container = styled.div`
         }
         
         .bannerImg{
-            background-image: url("../../src/assets/bannerImg.png");
+            /* background-image: url("../../src/assets/bannerImg.png"); */
             width: 19rem;
-            height: 14rem;
+            height: 12rem;
             position: absolute;
             bottom: 0;
             left:-2.5rem;
             background-repeat: no-repeat;
             
             @media(min-width: 1300px) {       
-                background-image: url("../../../src/assets/Banner.png");
+                /* background-image: url("../../../src/assets/Banner.png"); */
                 margin: 17.2rem 2.4rem 6.2rem 2.4rem;
                 width: 63rem;
-                height: 40rem;
+                height: 28rem;
                 background-size:cover;
                 position: absolute;
                 bottom: 0px;
                 left:-7.5rem;
                 bottom: -6.2rem;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
 
@@ -341,4 +346,5 @@ export const Container = styled.div`
 
         }
     }
+
 `                           

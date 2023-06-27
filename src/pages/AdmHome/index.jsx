@@ -12,6 +12,7 @@ import { useAuth } from "../../hooks/auth";
 import { useEffect } from "react";
 import { api } from "../../service/api";
 import { useLocation } from "react-router-dom";
+import Banner from "../../assets/Banner.png"
 
 
 
@@ -116,7 +117,9 @@ export function AdmHome() {
             </Header>
 
             <div className="bannerContainer">
-                <div className="bannerImg"></div>
+                <div className="bannerImg">
+                    <img src={Banner} alt="" />
+                </div>
                 <div className="bannerText">
                     <h1>Sabores inegualáveis</h1>
                     <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>

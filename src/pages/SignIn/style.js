@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/global";
 
 
 export const Container = styled.div`
@@ -76,13 +77,10 @@ export const Container = styled.div`
             }
         }
     }
-
-
-
-    @media screen and (min-width: 1300px){
-        
+    
+    @media ${device.desktop}{
         max-width: none;
-        
+
         .pageContainer{
             display: flex;
             flex-direction: row;
@@ -91,7 +89,6 @@ export const Container = styled.div`
             padding: 11rem 10.8rem 11rem 0;
             justify-content: center;
             
-
             .titleContainer{
                 display: flex;
                 align-items: center;
@@ -133,6 +130,8 @@ export const Container = styled.div`
            
             }
         }
+
     }
+
     
 `

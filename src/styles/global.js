@@ -1,5 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
+const size = {
+    desktop: '1300px'
+}
+
+export const device = {
+    desktop: `(min-width:${size.desktop})`
+}
+
 export default createGlobalStyle`
 
     *{

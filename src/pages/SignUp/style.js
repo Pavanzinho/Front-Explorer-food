@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { device } from "../../styles/global";
 
 export const Container = styled.div`
     max-width: 42.8rem;
@@ -7,16 +7,12 @@ export const Container = styled.div`
     flex-direction: column;
     margin:0 auto;
 
-   
 
-   
     .pageContainer{
 
         display: flex;
         flex-direction: column;
         padding: 15.8rem 4.7rem 0 6.5rem;
-
-
 
         h1,input,label{
             font-family: 'Roboto', sans-serif;
@@ -91,11 +87,9 @@ export const Container = styled.div`
         }
     }
 
-
-    @media screen and (min-width: 1300px){
-        
+    @media ${device.desktop} {
         max-width: none;
-        
+
         .pageContainer{
             display: flex;
             flex-direction: row;
@@ -139,12 +133,9 @@ export const Container = styled.div`
                     line-height: 4.48rem;
                     font-size: 3.2rem;
                 }
-           
-            
-
-           
             }
         }
+
+
     }
-    
 `

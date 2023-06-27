@@ -111,7 +111,7 @@ export const Container = styled.div`
                     line-height: 2rem;
                     font-weight: 700;
                 } 
-            }
+        }
 
         .textContainer{
           

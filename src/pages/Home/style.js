@@ -16,24 +16,14 @@ export const Container = styled.div`
         gap: 5px;
         align-items: center;
         
-        .bannerImg{
-            background-image: url("../../../src/assets/bannerImg.png");
+        .bannerImg{   
+            background-image: url("../../src/assets/bannerImg.png");
             width: 19rem;
             height: 14rem;
             position: absolute;
             bottom: 0;
             left:-25px;
             background-repeat: no-repeat;
-
-            img{
-                
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-                    
-                
-            }
-
         }
 
         .bannerText{ 
@@ -54,128 +44,23 @@ export const Container = styled.div`
             }
         }
         
-
-    }
-    
-    main{
-        margin:0 0 0 2.4rem;
-        display:flex;
-        flex-direction: column;
-        gap:2.4rem;
-        font-family: 'Poppins', sans-serif;
-        max-width: none;
-
-      
-        .typeOfFoodList{
-            margin:2.4rem 0;
-            max-width: none;
-
-            button{
-                display: none;
-            }
-            
-            h2{
-                font-size:1.8rem;
-                line-height:2.5rem;
-                background-color: ${({ theme }) => theme.LIGHT_LIGHT_300};
-                font-weight:500;
-                margin-bottom: 2.4rem;
-                
-            }
-
-            .cardsFoodContainer{
-                width:100%;
-                display:flex;
-                gap:1.6rem; 
-                height: 30rem;
-               
-                
-                .admFoodCard{
-                    background: ${({ theme }) => theme.COLORS.DARK_DARK_600};
-                
-                    .foodImg{
-                       
-                        img{
-
-                            width:8.8rem;
-                            height:8.8rem;
-                            display:flex;
-                        }
-                        
-                    }
-    
-                        .priceOfFood{
-                            gap:5px;
-                            display:flex;
-                            
-                            span{
-                                font-family: 'Roboto',sans-serif;
-                                color:#82F3FF;
-                                font-size:1.4rem;
-                            }
-    
-                        }
-    
-                        .foodQuantityAdjusterContainer{
-                            display:flex;
-                            align-items:center;
-                            font-size:1.4rem;
-         
-                        }
-    
-                        button{
-                            width:9.2rem;
-                            height: 100%;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            border-radius:5px;
-                            border:none;
-                            align-self:flex-end;
-    
-    
-                            span{
-                                font-weight:500;
-                                color:white;
-                                line-height:2.4rem;
-                                font-family: 'Poppins',sans-serif;
-                                font-size:1.4rem;
-                                padding: 4px 0
-                            }
-                        }
-                
-                    }            
-            }
-        }   
-    }
-    
-    @media screen and (min-width:1300px){
-
-     
-        .bannerContainer{
+        @media(min-width: 1300px){
             background-color: ${({ theme }) => theme.COLORS.DARK_DARK_700};
             height: 28rem;
             margin: 16.4rem 12rem 6.2rem ;
-            background-color:#00131C;
 
             .bannerImg{
-                background-image: url("../../../src/assets/Banner.png");
-                width: 63rem;
-                height: 40rem;
-                
-                background-size:cover;
-                object-fit: cover;
+                background-image: url("../../../src/assets/Banner.png");;
+                width: 65rem;
+                height: 44rem;
                 position: absolute;
+                background-size:cover;
                 bottom: 0px;
                 left:-60px;
                 background-repeat: no-repeat;
-                
-                img{
-                    
-                }
-        }
+            }
 
-        .bannerText{ 
+            .bannerText{ 
             position: absolute;
             right: 10rem;
             display: flex;
@@ -191,14 +76,100 @@ export const Container = styled.div`
                 font-size: 1.6rem;
                 line-height: 1.6rem;
             }
+            }
         }
-           
     }
-
+    
     main{
-        margin: 0 12rem ;
-        max-width: 100%;
-        overflow-x: hidden;
+        margin:0 0 0 2.4rem;
+        display:flex;
+        flex-direction: column;
+        gap:2.4rem;
+        font-family: 'Poppins', sans-serif;
+        max-width: none;
+
+        .typeOfFoodList{
+            margin:2.4rem 0;
+            max-width: none;
+
+            button{
+                display: none;
+            }
+            
+            h2{
+                font-size:1.8rem;
+                line-height:2.5rem;
+                background-color: ${({ theme }) => theme.LIGHT_LIGHT_300};
+                font-weight:500;
+                margin-bottom: 2.4rem;  
+            }
+
+            .cardsFoodContainer{
+                width:100%;
+                display:flex;
+                gap:1.6rem; 
+                height: 30rem;        
+                
+                .admFoodCard{
+                    background: ${({ theme }) => theme.COLORS.DARK_DARK_600};
+                
+                    .foodImg{
+                        img{
+
+                            width:8.8rem;
+                            height:8.8rem;
+                            display:flex;
+                        } 
+                    }
+    
+                    .priceOfFood{
+                        gap:5px;
+                        display:flex;
+                      
+                        span{
+                            font-family: 'Roboto',sans-serif;
+                            color:#82F3FF;
+                            font-size:1.4rem;
+                        }
+    
+                    }
+    
+                    .foodQuantityAdjusterContainer{
+                        display:flex;
+                        align-items:center;
+                        font-size:1.4rem;
+                    }
+    
+                    button{
+                        width:9.2rem;
+                        height: 100%;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        border-radius:5px;
+                        border:none;
+                        align-self:flex-end;
+
+
+                        span{
+                            font-weight:500;
+                            color:white;
+                            line-height:2.4rem;
+                            font-family: 'Poppins',sans-serif;
+                            font-size:1.4rem;
+                            padding: 4px 0
+                        }
+                    }
+                
+                    }            
+            }
+        } 
+        
+    
+        @media(min-width: 1300px){
+            margin: 0 12rem ;
+            max-width: 100%;
+            overflow-x: hidden;
    
             h2{
                 font-size: 3.2rem;
@@ -206,32 +177,32 @@ export const Container = styled.div`
                 line-height: 4.48rem;
             }
 
-        .typeOfFoodList{
-            height: 52.9rem;
-            position: relative;
-            display: flex;
+            .typeOfFoodList{
+                height: 52.9rem;
+                position: relative;
+                display: flex;
 
             button{
                 display: flex;
             }
 
             .buttonMoveForRight{
-                    button{
-                        background: transparent;
-                        position: absolute;
-                        z-index: 2;
-                        width: 4rem;
-                        height: 4rem;
-                        right: 0;
-                        top: 170px;
-                        border:none;
-
-                        img{
-                            width: 15px;
-                            height: 28px;
-                        }
+                button{
+                    background: transparent;
+                    position: absolute;
+                    z-index: 2;
+                    width: 4rem;
+                    height: 4rem;
+                    right: 0;
+                    top: 170px;
+                    border:none;
+                    
+                    img{
+                        width: 15px;
+                        height: 28px;
                     }
                 }
+            }
 
                 .buttonMoveForLeft{
                     button{
@@ -275,10 +246,7 @@ export const Container = styled.div`
                         
                         #handleDetails{
                             .foodImg{
-                               
-                                
                                 img{
-                              
                                     width:17.6rem;
                                     height:17.6rem;
                                     display:flex;
@@ -294,8 +262,7 @@ export const Container = styled.div`
                                     :hover{
                                         color: red;
                                     }
-                                }
-    
+                                }                               
                                 
                                 .foodTitle{
                                     font-weight:700;
@@ -326,17 +293,14 @@ export const Container = styled.div`
                                     display:flex;
                                     
                                     span{
-
                                         font-family: 'Roboto',sans-serif;
                                         color:#82F3FF;
                                         font-size:3.2rem;
                                     }
                                 }
                         }
-                        
-
-                            
-                            .foodQuantityAdjusterContainer{
+                               
+                        .foodQuantityAdjusterContainer{
                                 display:flex;
                                 gap:1.6rem;
                                 align-items:center;
@@ -360,8 +324,9 @@ export const Container = styled.div`
                                         gap: 0;
                                     }
                                 }
-                            }
-                            button{
+                        }
+                        
+                        button{
                                 width:9.2rem;
                                 display:flex;
                                 align-items:center;
@@ -379,11 +344,13 @@ export const Container = styled.div`
                                     font-size:1.4rem;
                                     padding: 4px 0
                                 }
-                            }
+                        }
                     }
                 }
             }
         }
-    }                                
-
+    }
+    
+    
+  
 `                           

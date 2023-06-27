@@ -16,26 +16,32 @@ export const Container = styled.div`
         gap: 5px;
         align-items: center;
         
+        @media(min-width: 1300px){
+            background-color: ${({ theme }) => theme.COLORS.DARK_DARK_700};
+            height: 28rem;
+            margin: 16.4rem 12rem 6.2rem ;
+        }
+        
         .bannerImg{
             background-image: url("../../src/assets/bannerImg.png");
             width: 19rem;
             height: 14rem;
             position: absolute;
             bottom: 0;
-            left:-25px;
+            left:-2.5rem;
             background-repeat: no-repeat;
+            
             @media(min-width: 1300px) {       
                 background-image: url("../../../src/assets/Banner.png");
-                width: 65rem;
-                height: 44rem;
+                margin: 17.2rem 2.4rem 6.2rem 2.4rem;
+                width: 63rem;
+                height: 40rem;
                 background-size:cover;
+                position: absolute;
                 bottom: 0px;
-                left:-60px;
-                
+                left:-7.5rem;
+                bottom: -6.2rem;
             }
-            
-            
-            
         }
 
         .bannerText{ 
@@ -54,6 +60,24 @@ export const Container = styled.div`
                 font-size: 1.2rem;
                 line-height: 1.6rem;
             }
+
+            @media(min-width: 1300px){
+                position: absolute;
+                right: 10rem;
+                display: flex;
+                flex-direction: column;
+                min-width: 21rem;
+                max-width: 42rem;
+                
+                h1{
+                    font-size: 4rem;
+                    line-height: 5.6rem;
+                }
+                p{
+                    font-size: 1.6rem;
+                    line-height: 1.6rem;
+                }
+            }
         }
         
 
@@ -67,7 +91,6 @@ export const Container = styled.div`
         font-family: 'Poppins', sans-serif;
         max-width: none;
 
-      
         .typeOfFoodList{
             margin:2.4rem 0;
             max-width: none;
@@ -146,43 +169,12 @@ export const Container = styled.div`
                 
                 }            
             }
-        }   
-    }
-    
-    @media only screen and (min-width:1300px){
-
-     
-        .bannerContainer{
-            background-color: ${({ theme }) => theme.COLORS.DARK_DARK_700};
-            height: 28rem;
-            margin: 16.4rem 12rem 6.2rem ;
-
-          
-
-        .bannerText{ 
-            position: absolute;
-            right: 10rem;
-            display: flex;
-            flex-direction: column;
-            min-width: 21rem;
-            max-width: 42rem;
-            
-            h1{
-                font-size: 4rem;
-                line-height: 5.6rem;
-            }
-            p{
-                font-size: 1.6rem;
-                line-height: 1.6rem;
-            }
-        }
-           
-    }
-
-    main{
-        margin: 0 12rem ;
-        max-width: 100%;
-        overflow-x: hidden;
+        }  
+        
+        @media(min-width: 1300px){
+            margin: 0 12rem ;
+            max-width: 100%;
+            overflow-x: hidden;
    
             h2{
                 font-size: 3.2rem;
@@ -190,16 +182,16 @@ export const Container = styled.div`
                 line-height: 4.48rem;
             }
 
-        .typeOfFoodList{
-            height: 52.9rem;
-            position: relative;
-            display: flex;
-
-            button{
+            .typeOfFoodList{
+                height: 52.9rem;
+                position: relative;
                 display: flex;
-            }
 
-            .buttonMoveForRight{
+                button{
+                    display: flex;
+                }
+
+                .buttonMoveForRight{
                     button{
                         background: transparent;
                         position: absolute;
@@ -209,7 +201,7 @@ export const Container = styled.div`
                         right: 0;
                         top: 170px;
                         border:none;
-
+                        
                         img{
                             width: 15px;
                             height: 28px;
@@ -235,139 +227,141 @@ export const Container = styled.div`
                     }
                 }
 
-            .cardsFoodContainer{
-                height: 100%;
-                max-height: 46.2rem;
-                max-width: 100%;
-                display: flex;
-                align-items: center;
-                position: relative;
+                .cardsFoodContainer{
+                    height: 100%;
+                    max-height: 46.2rem;
+                    max-width: 100%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
 
-                    .admFoodCard{
-                        display:flex;
-                        flex-direction:column;
-                        align-items: center;
-                        gap:15px;
-                        background:${({ theme }) => theme.COLORS.DARK_DARK_300};
-                        padding:1.6rem;
-                        border-radius:8px;
-                        position: relative;
-                        height: 100%;
-                        width: 30.4rem;
-                        max-width: none;
-                        min-width: 30.4rem;
-                        
-                        #handleDetails{
-                            .foodImg{
-                               
+                        .admFoodCard{
+                            display:flex;
+                            flex-direction:column;
+                            align-items: center;
+                            gap:15px;
+                            background:${({ theme }) => theme.COLORS.DARK_DARK_300};
+                            padding:1.6rem;
+                            border-radius:8px;
+                            position: relative;
+                            height: 100%;
+                            width: 30.4rem;
+                            max-width: none;
+                            min-width: 30.4rem;
+                            
+                            #handleDetails{
+                                .foodImg{
+                                    img{
                                 
-                                img{
-                              
-                                    width:17.6rem;
-                                    height:17.6rem;
-                                    display:flex;
-                                    background-repeat: no-repeat;
-                                    background-size: cover;
-                                }
-                            }
-                                #heart{
-                                    position: absolute;
-                                    right:1.6rem ;
-                                    top: 1.6rem;
-                    
-                                    :hover{
-                                        color: red;
+                                        width:17.6rem;
+                                        height:17.6rem;
+                                        display:flex;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
                                     }
                                 }
-    
+                                    #heart{
+                                        position: absolute;
+                                        right:1.6rem ;
+                                        top: 1.6rem;
+                        
+                                        :hover{
+                                            color: red;
+                                        }
+                                    }                               
+                                    
+                                    .foodTitle{
+                                        font-weight:700;
+                                        font-size:2.4rem;
+                                        line-height:3.3rem;
+                                        width:100%;
+                                        display:flex;
+                                        align-items:center;
+                                        justify-content:center;
+                                        gap:15px;
+        
+                                        img{
+                                            width: 20px;
+                                            height: 20px;
+                                        }
+                                    
+                                    }
                                 
-                                .foodTitle{
-                                    font-weight:700;
-                                    font-size:2.4rem;
-                                    line-height:3.3rem;
-                                    width:100%;
+                                    .descriptionOfFood{
+                                        font-size: 1.4rem;
+                                        line-height: 2.24rem;
+                                        font-family: 'Roboto', sans-serif;
+                                        color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_400};
+                                        display: flex;
+                                    }
+                                    .priceOfFood{
+                                        gap:10px;
+                                        display:flex;
+                                        
+                                        span{
+
+                                            font-family: 'Roboto',sans-serif;
+                                            color:#82F3FF;
+                                            font-size:3.2rem;
+                                        }
+                                    }
+                            }
+                                
+                            .foodQuantityAdjusterContainer{
+                                    display:flex;
+                                    gap:1.6rem;
+                                    align-items:center;
+                                    font-size:1.4rem;
+                                    flex-direction: row;
+
+                                    div{
+                                        display: flex;
+                                        flex-direction: row;
+                                        gap: 1.4rem;
+                                        align-items: center;
+                                        height: 4.8rem;
+                                        
+                                        img{
+                                            width: 2.4rem;
+                                            height: 2.4rem;
+                                            object-fit: cover;
+                                        }
+                        
+                                        .NumbersQuantity{
+                                            gap: 0;
+                                        }
+                                    }
+                            }
+                            
+                            button{
+                                    width:9.2rem;
                                     display:flex;
                                     align-items:center;
                                     justify-content:center;
-                                    gap:15px;
-    
-                                    img{
-                                        width: 20px;
-                                        height: 20px;
-                                    }
+                                    background: ${({ theme }) => theme.COLORS.TINS_TOMATO_100};
+                                    border-radius:5px;
+                                    border:none;
+                                    align-self:flex-end;
                                 
-                                }
-                            
-                                .descriptionOfFood{
-                                    font-size: 1.4rem;
-                                    line-height: 2.24rem;
-                                    font-family: 'Roboto', sans-serif;
-                                    color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_400};
-                                    display: flex;
-                                }
-                                .priceOfFood{
-                                    gap:10px;
-                                    display:flex;
-                                    
                                     span{
-
-                                        font-family: 'Roboto',sans-serif;
-                                        color:#82F3FF;
-                                        font-size:3.2rem;
+                                        font-weight:500;
+                                        color:white;
+                                        line-height:2.4rem;
+                                        font-family: 'Poppins',sans-serif;
+                                        font-size:1.4rem;
+                                        padding: 4px 0
                                     }
-                                }
+                            }
                         }
-                        
-
-                            
-                            .foodQuantityAdjusterContainer{
-                                display:flex;
-                                gap:1.6rem;
-                                align-items:center;
-                                font-size:1.4rem;
-                                flex-direction: row;
-
-                                div{
-                                    display: flex;
-                                    flex-direction: row;
-                                    gap: 1.4rem;
-                                    align-items: center;
-                                    height: 4.8rem;
-                                    
-                                    img{
-                                        width: 2.4rem;
-                                        height: 2.4rem;
-                                        object-fit: cover;
-                                    }
-                    
-                                    .NumbersQuantity{
-                                        gap: 0;
-                                    }
-                                }
-                            }
-                            button{
-                                width:9.2rem;
-                                display:flex;
-                                align-items:center;
-                                justify-content:center;
-                                background: ${({ theme }) => theme.COLORS.TINS_TOMATO_100};
-                                border-radius:5px;
-                                border:none;
-                                align-self:flex-end;
-                            
-                                span{
-                                    font-weight:500;
-                                    color:white;
-                                    line-height:2.4rem;
-                                    font-family: 'Poppins',sans-serif;
-                                    font-size:1.4rem;
-                                    padding: 4px 0
-                                }
-                            }
-                    }
                 }
             }
         }
-    }                                
+        
+    }
+         
+     
+    
+    
+             
 
 `                           

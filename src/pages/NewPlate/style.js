@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
+import { device } from "../../styles/global";
+
 
 export const Container = styled.div`
 
     display: flex;
     flex-direction: column;
-    height: 100vh;
     position: relative;
-    
 
     .error{
         border: solid 2px red;
         width: 100%;
     }
-
 
     main{
         padding: 11px 3.2rem 5.3rem;
@@ -395,33 +394,30 @@ export const Container = styled.div`
                 }          
             }
 
-        }       
-    }
+        } 
 
-
-    @media screen and (min-width: 1300px) {
-        
-        main{
+        @media ${device.desktop}{
             padding: 11px 12.3rem 5.3rem;
             height: 100%;
             margin-top: 4rem;
 
-        #buttonBack{
-            display: flex;
-            gap: 10px;
-            border: none;
-            background: transparent;
+            #buttonBack{
+                display: flex;
+                gap: 10px;
+                border: none;
+                background: transparent;
 
-            span{
-                font-size: 2.4rem;
-                line-height: 2.3rem;
-                font-weight: 700;
-                color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_300};
-                font-family: 'Poppins', sans-serif;            }
+                span{
+                    font-size: 2.4rem;
+                    line-height: 2.3rem;
+                    font-weight: 700;
+                    color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_300};
+                    font-family: 'Poppins', sans-serif;            
+                }
         
-        }
+            }
 
-        h1{
+            h1{
             font-size: 2.8rem;
             font-family: 'Poppins', sans-serif;
             line-height: 3rem;
@@ -429,369 +425,365 @@ export const Container = styled.div`
             margin: 2.4rem 0;
             font-weight: 500;
 
-        }
+            }
 
-        form{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-
-
-            fieldset{
-                border: none;
+            form{
+                width: 100%;
                 display: flex;
                 flex-direction: column;
-                gap: 2.4rem;
-                width: 100%;
-
-                label{
+                
+                fieldset{
+                    border: none;
                     display: flex;
                     flex-direction: column;
-                    font-family: 'Roboto', sans-serif;
-                    font-size: 1.6rem;
-                    color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_400};
-                    line-height: 1.6rem;
-
-                    div{
-                        border-radius: 8px;
-                    }
-                }
-
-                .definingDisplay{
-                    display: flex;
-                    flex-direction: row;
                     gap: 2.4rem;
                     width: 100%;
-                    justify-content: space-between;
-  
-                    label:nth-of-type(1){
-                        
-                        width: 20%;
-                        
-                        .inputContainer{
-                            margin-top: 1.6rem;
-                            height: 4.8rem;
-                            width: 100%;
-                            background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
-                            padding: 1.2rem 1.4rem;
-                            display: flex;
-                            align-items: center;
-                            input{
-                                    background:transparent;
-                                    border:none;      
+
+                    label{
+                        display: flex;
+                        flex-direction: column;
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 1.6rem;
+                        color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_400};
+                        line-height: 1.6rem;
+
+                        div{
+                            border-radius: 8px;
+                        }
+                    }
+
+                    .definingDisplay{
+                        display: flex;
+                        flex-direction: row;
+                        gap: 2.4rem;
+                        width: 100%;
+                        justify-content: space-between;
+    
+                        label:nth-of-type(1){
+                            
+                            width: 20%;
+                            
+                            .inputContainer{
+                                margin-top: 1.6rem;
+                                height: 4.8rem;
+                                width: 100%;
+                                background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
+                                padding: 1.2rem 1.4rem;
+                                display: flex;
+                                align-items: center;
+                                input{
+                                        background:transparent;
+                                        border:none;      
+                                        
+                                        &::placeholder{
+                                            font-size: 1.6rem;
+                                            font-weight: 400;
+                                            font-family: 'Roboto', sans-serif;
+                                            color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
+                                        }
+                                }
+            
+                                button{
+                                    background: transparent;
+                                    border: none;
+                                }
+                                
+                                .inputFileContent{
+                                        display: flex;
+                                        gap:8px;
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        align-items: center;
+                                        padding: 1.2rem 1.8rem;  
                                     
-                                    &::placeholder{
-                                        font-size: 1.6rem;
-                                        font-weight: 400;
-                                        font-family: 'Roboto', sans-serif;
-                                        color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
-                                    }
-                            }
-        
-                            button{
-                                background: transparent;
-                                border: none;
+                                        input {
+                                            position: absolute;
+                                            opacity: 0;
+                                            margin: 0;
+                                            padding: 0;
+                                        }
+            
+                                        span{
+                                            width: 100%;
+                                            line-height: 2.4rem;
+                                            font-size: 1.4rem;
+                                            height: 2.4rem;
+                                            font-family: 'Poppins', sans-serif;
+                                            font-weight: 500;
+                                            color: white;
+                                            
+                                        }
+                                
+                                }
                             }
                             
-                            .inputFileContent{
-                                    display: flex;
-                                    gap:8px;
+                        }
+
+                        label:nth-of-type(2){
+                            
+                            width: 41%;
+                            
+                            .inputContainer{
+                                margin-top: 1.6rem;
+                                height: 4.8rem;
+                                width: 100%;
+                                background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
+                                padding: 1.2rem 1.4rem;
+                                display: flex;
+                                align-items: center;
+                                
+                                input{
+                                        background:transparent;
+                                        border:none;      
+                                        
+                                        &::placeholder{
+                                            font-size: 1.6rem;
+                                            font-weight: 400;
+                                            font-family: 'Roboto', sans-serif;
+                                            color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
+                                        }
+                                }
+
+                                #inputTextContainer{
+                                    width: 100%;
+                                    height: 100%;   
+                                }
+                            }
+                        }
+
+                        label:nth-of-type(3){
+                            width: 32.5%;
+                            
+                            
+                            .inputContainer{
+                                margin-top: 1.6rem;
+                                height: 4.8rem;
+                                width: 100%;
+                                background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
+                                padding: 1.2rem 1.4rem;
+                                display: flex;
+                                align-items: center;
+                                
+                                input{
+                                        background:transparent;
+                                        border:none;      
+                                        
+                                        &::placeholder{
+                                            font-size: 1.6rem;
+                                            font-weight: 400;
+                                            font-family: 'Roboto', sans-serif;
+                                            color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
+                                        }
+                                }
+
+                                button{
+                                    background: transparent;
+                                    border: none;
+                                }
+
+                                #foodCategory{
                                     width: 100%;
                                     height: 100%;
-                                    display: flex;
-                                    align-items: center;
-                                    padding: 1.2rem 1.8rem;  
+                                    background: transparent;
+                                    border: none;
+                                    color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_400};
+                                    font-family: 'Roboto', sans-serif;
+                                    font-size: 1.4rem;
+                                    line-height: 2.2rem;
+                                    appearance: none;
+                                    -webkit-appearance: none;
+                                    -moz-appearance: none;    
+                
+                                    background-image: url("../../src/assets/downArrow.svg");
+                                    background-repeat: no-repeat;
+                                    background-position: right;
                                 
-                                    input {
-                                        position: absolute;
-                                        opacity: 0;
-                                        margin: 0;
-                                        padding: 0;
+                                    &:focus{
+                                        outline: none;
                                     }
-        
-                                    span{
+                
+                                    option{
+                                        background-color: ${({ theme }) => theme.COLORS.DARK_DARK_900};
+                                        border-radius: 8px;
+                                        border: none;
+                                        outline: none;
                                         width: 100%;
-                                        line-height: 2.4rem;
-                                        font-size: 1.4rem;
-                                        height: 2.4rem;
-                                        font-family: 'Poppins', sans-serif;
-                                        font-weight: 500;
-                                        color: white;
+                                    }
+                                }    
+                            }
+                        }  
+                    }    
+
+                    .definingDisplay2{
+                        display: flex;
+                        flex-direction: row;
+                        gap: 2.4rem;
+
+                        label:nth-of-type(1){
+                            
+                            width: 74%;
+                            .ContainerOfTagsBox{
+                                margin-top: 1.6rem;
+                                width: 100%;
+                                padding: 1.2rem 1.4rem;
+                                display: flex;
+                                align-items: center;
+                                background-color:${({ theme }) => theme.COLORS.DARK_DARK_800};
+
+                                #tagsContainer{
+                                    width: 100%;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 17px;
+                                
+                                    /* justify-content: space-between; */   
+                                    
+                                    
+                                    div{
+                                        span{
+                                            font-family: 'Roboto', sans-serif;
+                                            font-size: 1.6rem;
+                                            line-height: 1.6rem;
+                                            color: white;
+                                        }
+
+                                        button{
+                                            border: none;
+                                            background: transparent;
+                                        }
+                                    }
+                                    
+                                    .tag{
+                                        width: 10rem;
+                                        height: 3.2rem;
+                                        background: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_600};
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        gap: 8px;
+                                    
+                                        span{
+                                            font-family: 'Roboto', sans-serif;
+                                            font-size: 1.6rem;
+                                            line-height: 1.6rem;
+                                            color: white;
+                                        }
+
                                         
                                     }
-                            
-                            }
-                        }
-                        
-                    }
 
-                    label:nth-of-type(2){
-                        
-                        width: 41%;
-                        
-                        .inputContainer{
-                            margin-top: 1.6rem;
-                            height: 4.8rem;
-                            width: 100%;
-                            background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
-                            padding: 1.2rem 1.4rem;
-                            display: flex;
-                            align-items: center;
-                            
-                            input{
-                                    background:transparent;
-                                    border:none;      
-                                    
-                                    &::placeholder{
-                                        font-size: 1.6rem;
-                                        font-weight: 400;
-                                        font-family: 'Roboto', sans-serif;
-                                        color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
+                                    .addTag{
+                                        width: 10rem;
+                                        height: 3.2rem;
+                                        background: transparent;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        gap: 8px;
+                                        border: 1px dashed #7C7C8A;
+
+                                        button{
+                                            border: none;
+                                            background: transparent;
+                                        }
+                                        
                                     }
-                            }
+                                    
+                                }
 
-                            #inputTextContainer{
+
+                            }
+                            
+                            
+                        }
+
+                        label:nth-of-type(2){
+                            width: 22%;
+                            
+                            .inputContainer{
+                                margin-top: 1.6rem;
+                                height: 4.8rem;
                                 width: 100%;
-                                height: 100%;   
-                            }
+                                background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
+                                padding: 1.2rem 1.4rem;
+                                display: flex;
+                                align-items: center;
+                                
+                                input{
+                                        background:transparent;
+                                        border:none;      
+                                        
+                                        &::placeholder{
+                                            font-size: 1.6rem;
+                                            font-weight: 400;
+                                            font-family: 'Roboto', sans-serif;
+                                            color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
+                                        }
+                                }
+                            }    
                         }
+
+                        
                     }
 
-                    label:nth-of-type(3){
-                        width: 32.5%;
-                        
-                        
-                        .inputContainer{
-                            margin-top: 1.6rem;
-                            height: 4.8rem;
-                            width: 100%;
-                            background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
-                            padding: 1.2rem 1.4rem;
-                            display: flex;
-                            align-items: center;
-                            
-                            input{
-                                    background:transparent;
-                                    border:none;      
-                                    
-                                    &::placeholder{
-                                        font-size: 1.6rem;
-                                        font-weight: 400;
-                                        font-family: 'Roboto', sans-serif;
-                                        color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
-                                    }
-                            }
-
-                            button{
-                                background: transparent;
-                                border: none;
-                            }
-
-                            #foodCategory{
+                    .textAreaLabel{
+                            .textAreaContainer{
+                                margin-top: 1.6rem;
+                                height: 24rem;
+                                width: 100%;
+                                background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
+                                padding: 1.2rem 1.4rem;
+                                display: flex;
+                                align-items: center;
+            
+                            textarea{
                                 width: 100%;
                                 height: 100%;
                                 background: transparent;
                                 border: none;
-                                color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_400};
+                                color: white;
+                                resize: none;
                                 font-family: 'Roboto', sans-serif;
-                                font-size: 1.4rem;
-                                line-height: 2.2rem;
-                                appearance: none;
-                                -webkit-appearance: none;
-                                -moz-appearance: none;    
+                                font-size: 1.6rem;
+                                line-height: 100%;
             
-                                background-image: url("../../src/assets/downArrow.svg");
-                                background-repeat: no-repeat;
-                                background-position: right;
-                            
+                                &::placeholder{
+                                    font-family: 'Roboto', sans-serif;
+                                    font-size: 1.6rem;
+                                    line-height: 100%;
+                                    color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
+                                    resize: none;
+                                }
+            
                                 &:focus{
                                     outline: none;
                                 }
-            
-                                option{
-                                    background-color: ${({ theme }) => theme.COLORS.DARK_DARK_900};
-                                    border-radius: 8px;
-                                    border: none;
-                                    outline: none;
-                                    width: 100%;
-                                }
-                            }    
-                        }
-                    }  
-                }    
-
-                .definingDisplay2{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 2.4rem;
-
-                    label:nth-of-type(1){
-                        
-                        width: 74%;
-                        .ContainerOfTagsBox{
-                            margin-top: 1.6rem;
-                            width: 100%;
-                            padding: 1.2rem 1.4rem;
-                            display: flex;
-                            align-items: center;
-                            background-color:${({ theme }) => theme.COLORS.DARK_DARK_800};
-
-                            #tagsContainer{
-                                width: 100%;
-                                display: flex;
-                                flex-wrap: wrap;
-                                gap: 17px;
-                            
-                                /* justify-content: space-between; */   
-                                
-                                
-                                div{
-                                    span{
-                                        font-family: 'Roboto', sans-serif;
-                                        font-size: 1.6rem;
-                                        line-height: 1.6rem;
-                                        color: white;
-                                    }
-
-                                    button{
-                                        border: none;
-                                        background: transparent;
-                                    }
-                                }
-                                
-                                .tag{
-                                    width: 10rem;
-                                    height: 3.2rem;
-                                    background: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_600};
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    gap: 8px;
-                                
-                                    span{
-                                        font-family: 'Roboto', sans-serif;
-                                        font-size: 1.6rem;
-                                        line-height: 1.6rem;
-                                        color: white;
-                                    }
-
-                                    
-                                }
-
-                                .addTag{
-                                    width: 10rem;
-                                    height: 3.2rem;
-                                    background: transparent;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    gap: 8px;
-                                    border: 1px dashed #7C7C8A;
-
-                                    button{
-                                        border: none;
-                                        background: transparent;
-                                    }
-                                    
-                                }
-                                
+                            }
                             }
 
-
                         }
-                        
-                        
-                    }
-
-                    label:nth-of-type(2){
-                        width: 22%;
-                        
-                        .inputContainer{
-                            margin-top: 1.6rem;
-                            height: 4.8rem;
-                            width: 100%;
-                            background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
-                            padding: 1.2rem 1.4rem;
-                            display: flex;
-                            align-items: center;
-                            
-                            input{
-                                    background:transparent;
-                                    border:none;      
-                                    
-                                    &::placeholder{
-                                        font-size: 1.6rem;
-                                        font-weight: 400;
-                                        font-family: 'Roboto', sans-serif;
-                                        color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
-                                    }
-                            }
-                        }    
-                    }
-
                     
-                }
-
-                .textAreaLabel{
-                        .textAreaContainer{
-                            margin-top: 1.6rem;
-                            height: 24rem;
-                            width: 100%;
-                            background-color: ${({ theme }) => theme.COLORS.DARK_DARK_800};
-                            padding: 1.2rem 1.4rem;
-                            display: flex;
-                            align-items: center;
-        
-                        textarea{
+                    #redButton{
+                        height: 4.8rem;
+                        background: ${({ theme }) => theme.COLORS.TINS_TOMATO_400};
+                        width: 15%;
+            
+                        >input{
                             width: 100%;
                             height: 100%;
                             background: transparent;
                             border: none;
+                            font-family: 'Poppins', sans-serif;
                             color: white;
-                            resize: none;
-                            font-family: 'Roboto', sans-serif;
-                            font-size: 1.6rem;
-                            line-height: 100%;
-        
-                            &::placeholder{
-                                font-family: 'Roboto', sans-serif;
-                                font-size: 1.6rem;
-                                line-height: 100%;
-                                color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_500};
-                                resize: none;
-                            }
-        
-                            &:focus{
-                                outline: none;
-                            }
+                            font-weight: 500;
                         }
-                        }
+                        
+                    }          
+                }
 
-                    }
-                
-                #redButton{
-                    height: 4.8rem;
-                    background: ${({ theme }) => theme.COLORS.TINS_TOMATO_400};
-                    width: 15%;
-        
-                    >input{
-                        width: 100%;
-                        height: 100%;
-                        background: transparent;
-                        border: none;
-                        font-family: 'Poppins', sans-serif;
-                        color: white;
-                        font-weight: 500;
-                    }
-                    
-                }          
-            }
-
-        }       
-        }
-        /* footer{
-            position: absolute;
-            bottom: 0;
-        } */
+            }  
+        }    
     }
+
 `

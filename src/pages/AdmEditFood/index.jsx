@@ -4,21 +4,66 @@ import { RedButton } from "../../components/RedButton";
 import { Footer } from "../../components/Footer";
 import { NoteItem } from "../../components/NoteItem";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { api } from "../../service/api";
+import { useEffect } from "react";
 
 
 export function AdmEditFood() {
     const navigate = useNavigate()
     const [ingredients, setIngredients] = useState([]);
-    const [newIngredient, setNewIngredient] = useState("")
-    const [avatarFile, setAvatarFile] = useState(null)
+    const [newIngredient, setNewIngredient] = useState("");
+    const [avatarFile, setAvatarFile] = useState(null);
+    const [avatarUrl, setAvatarUrl ] = useState(" ")
+    const [plates, setPlates] = useState([]);
+   
 
     const [plateTitle, setPlateTitle] = useState("");
     const [plateDescription, setPlateDescription] = useState("");
     const [platePrice, setPlatePrice] = useState("");
+    const [plateCategory, setPlateCategory] = useState("");
     const location = useLocation()
     const { id } = location.state
+   
+    function setStates(response){
+        setPlates(response.data)
+        setPlateTitle(response.data.plate_title)
+        setPlatePrice(response.data.plate_price)
+        setPlateDescription(response.data.plate_description);
+        setPlateCategory(response.data.plate_category)
+        setAvatarUrl(response.data.plates.avatar)
+    }
+
+
+    useEffect(() => {
+        async function fetchPlates() {
+            try {
+
+                let params;
+                params = new URLSearchParams();
+                params.append("id", id);
+
+            const response = await api.get(`/plates/${id}`)
+            setStates(response);
+
+            } catch (error) {
+                console.error(error)
+
+            }
+        };
+        
+        async function fetchIngredients() {
+            const response = await api.get("ingredients")
+            const ingredients = response.data;  
+            const ingredientsOfPlate = ingredients.filter((ingredient) => ingredient.plate_id === plates.id)
+            setIngredients(ingredientsOfPlate)
+
+            
+        };
+        
+        fetchPlates();
+        fetchIngredients();
+    }, [id])
 
     function handleInsertAvatar(event) {
         const file = event.target.files[0]
@@ -53,24 +98,32 @@ export function AdmEditFood() {
         }
 
         try {
-            if (avatarFile) {
+            let avatarToSend;
+            if(avatarFile){
+                avatarToSend=avatarFile
+            }else if(avatarUrl) {
+                const response =await fetch(avatarUrl)
+                const data= await response.blob()
+                avatarToSend = new File([data], "avatar.jpg")
+            }
+                           
                 const formData = new FormData();
-
                 //criando objeto para enviar dados de um formulário por meio de um requisição HTTP.
                 formData.append("plate_title", plateTitle);
+                formData.append("plate_category", plateCategory);
                 formData.append("plate_description", plateDescription);
                 formData.append("plate_price", platePrice);
                 ingredients.forEach(ingredient => formData.append("ingredients", ingredient));
-                formData.append("avatar", avatarFile)
+                formData.append("avatar", avatarToSend)
                 //  FormData  permite o envio de dados de formulário que incluem tanto campos de texto simples quanto arquivos binários, como imagens.
-
+                console.log(formData)
 
                 await api.put(`/plates/${id}`, formData, {
                     headers: {
                         'Content-type': 'multipart/form-data'
                     }
                 });
-            }
+            
             alert("Prato atualizado com sucesso")
         } catch (error) {
             if (error.response) {
@@ -158,7 +211,9 @@ export function AdmEditFood() {
                                         name="nameFoodInput"
                                         id="inputTextContainer"
                                         placeholder="Ex: Salada Ceasar"
-                                        onChange={event => setPlateTitle(event.target.value)}
+                                        onChange={(event) => setPlateTitle(event.target.value)}
+                                        value={plateTitle}
+                                        
                                     />
 
                                 </div>
@@ -167,10 +222,10 @@ export function AdmEditFood() {
                             <label>
                                 Categoria
                                 <div className="inputContainer dark900">
-                                    <select id="foodCategory">
-                                        <option value="meals">Refeições</option>
-                                        <option value="desserts">Sobremesas</option>
-                                        <option value="drinks">Bebidas</option>
+                                    <select value= {plateCategory} id="foodCategory" onChange={(event)=>setPlateCategory(event.target.value)}>
+                                        <option value="refeições">Refeições</option>
+                                        <option value="sobremesas">Sobremesas</option>
+                                        <option value="pratos principais">Pratos principais</option>
                                     </select>
                                 </div>
                             </label>
@@ -187,9 +242,10 @@ export function AdmEditFood() {
 
                                                 <NoteItem
                                                     key={index}
-                                                    value={ingredient}
+                                                    value={ingredient.name}
                                                     onClick={() => { handleDeleteIngredient(ingredient) }}
                                                     onChange={(e) => setNewIngredient(e.target.value)}
+                                                  
 
                                                 />
                                             ))
@@ -215,6 +271,7 @@ export function AdmEditFood() {
                                         id="inputTextContainer"
                                         placeholder="R$ 00,00 "
                                         onChange={event => setPlatePrice(event.target.value)}
+                                        value={platePrice}
                                     />
                                 </div>
                             </label>
@@ -228,6 +285,7 @@ export function AdmEditFood() {
                                     id="description"
                                     placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
                                     onChange={event => setPlateDescription(event.target.value)}
+                                    value={plateDescription}
                                 >
                                 </textarea>
                             </div>

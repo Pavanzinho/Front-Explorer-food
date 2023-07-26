@@ -20,6 +20,7 @@ export function PasswordInput({ title, ...rest }) {
                 <input {...rest}
                     type={notSeePassword ? "password" : "text"}
                     placeholder="mínimo 6 caracteres"
+                    required
                 />
 
                 <button

@@ -21,10 +21,15 @@ export function SignIn() {
         navigate("/register")
     }
 
-    return (
-        <Container>
+    function handleSubmit(event){
+        event.preventDefault()
+        handleSignIn()
+    }
 
-            <div className="pageContainer">
+    return (
+        <Container >
+
+            <div className="pageContainer" >
                 <div className="titleContainer">
                     <svg width="39" height="44" viewBox="0 0 39 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19.6574 0L38.4133 10.8287V32.4862L19.6574 43.3149L0.901548 32.4862V10.8287L19.6574 0Z" fill="#065E7C" />
@@ -32,7 +37,7 @@ export function SignIn() {
 
                     <h1>food explorer</h1>
                 </div>
-                <form action="">
+                <form onSubmit={handleSubmit}>
 
                     <h1>Faça login</h1>
 
@@ -41,11 +46,14 @@ export function SignIn() {
                         name="email"
                         placeholder="exemplo:exemplo@gmail.com"
                         onChange={event => setEmail(event.target.value)}
+                        value={email}
+                        
                     />
 
                     <PasswordInput
                         title="Senha"
                         onChange={event => setPassword(event.target.value)}
+                        value={password}
                     />
 
                     <RedButton

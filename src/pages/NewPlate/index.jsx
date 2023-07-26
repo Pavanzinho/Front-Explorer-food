@@ -105,6 +105,11 @@ export function NewPlate() {
         setError(isNaN(Number(inputValue)));
     }
 
+    function handleSubmit(event){
+        event.preventDefault()
+        handleNewPlate()
+    }
+
 
 
     return (
@@ -142,7 +147,7 @@ export function NewPlate() {
 
                 <h1>Novo prato</h1>
 
-                <form action="newPlateForm">
+                <form action="newPlateForm" onSubmit={handleSubmit}>
 
                     <fieldset>
 

@@ -5,31 +5,6 @@ export function RedButton({ newplate, clientHeader, style, children, ...rest }) 
 
     let idForInactiveButton;
 
-    // if (style === "headerClientRedButton") {
-    //     buttonText = " Pedidos(0)"
-    // }
-
-    // if (style === "headerAdmRedButton") {
-    //     buttonText = "Novo prato"
-    // }
-
-    // if (style === "signUpRedButton") {
-    //     buttonText = "Criar conta"
-    // }
-
-    // if (style === "signInRedButton") {
-    //     buttonText = " Entrar"
-    // }
-
-    // if (style === "clientDetailsRedButton") {
-    //     buttonText = ""
-    // }
-
-    // if (newplate) {
-    //     idForInactiveButton = "inactiveButton"
-    // } else {
-    //     idForInactiveButton = ""
-    // }
 
     const styleButtonTextMap = {
         headerClientRedButton: "Pedidos(0)",
@@ -47,7 +22,7 @@ export function RedButton({ newplate, clientHeader, style, children, ...rest }) 
     return (
         <Container
             {...rest}
-            type="button"
+            type="submit"
             className={style}
             id={idForInactiveButton}
 

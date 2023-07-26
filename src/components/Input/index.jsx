@@ -1,12 +1,16 @@
 import { Container } from "./style";
 
-export function Input({title,placeholder, ...rest}){
+export function Input({ type, title,placeholder, ...rest}){
 
     return(
         <Container {...rest}>
             
             {title}
-            <input placeholder={placeholder}/>
+            <input 
+            placeholder={placeholder}
+            required
+            typeof={type}
+            />
 
            
         </Container>

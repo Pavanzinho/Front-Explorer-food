@@ -12,7 +12,8 @@ export function SignUp() {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-
+    const navigate = useNavigate();
+    
     const [isAdm, setIsAdm] = useState(false)
 
     async function handleSignUp() {
@@ -35,17 +36,17 @@ export function SignUp() {
         }
     }
 
-
-
-    const navigate = useNavigate();
-
     function handleSignIn() {
         navigate("/")
     }
 
+    function handleSubmit(event){
+        event.preventDefault()
+        handleSignUp()
+    }
+
     return (
         <Container>
-
             <div className="pageContainer">
                 <div className="titleContainer">
                     <svg width="39" height="44" viewBox="0 0 39 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +56,7 @@ export function SignUp() {
                     <h1>food explorer</h1>
                 </div>
 
-                <form action="">
+                <form action="" onSubmit={handleSubmit}>
 
                     <h1>Crie sua conta</h1>
                     <Input
@@ -63,6 +64,7 @@ export function SignUp() {
                         name="name"
                         placeholder="Maria da Silva"
                         onChange={event => setName(event.target.value)}
+                        type="text"
                     />
 
                     <Input
@@ -70,6 +72,7 @@ export function SignUp() {
                         name="email"
                         placeholder="exemplo:exemplo@gmail.com"
                         onChange={event => setEmail(event.target.value)}
+                        type="email"
                     />
 
 
@@ -103,8 +106,6 @@ export function SignUp() {
                     />
 
                 </form>
-
-
             </div>
         </Container>
     )

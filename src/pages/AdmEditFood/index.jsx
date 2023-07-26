@@ -25,15 +25,10 @@ export function AdmEditFood() {
     const location = useLocation()
     const { id } = location.state
    
-    function setStates(response){
-        setPlates(response.data)
-        setPlateTitle(response.data.plate_title)
-        setPlatePrice(response.data.plate_price)
-        setPlateDescription(response.data.plate_description);
-        setPlateCategory(response.data.plate_category)
-        setAvatarUrl(response.data.plates.avatar)
-    }
 
+    function handleBack() {
+        navigate(-1)
+    }
 
     useEffect(() => {
         async function fetchPlates() {
@@ -43,26 +38,33 @@ export function AdmEditFood() {
                 params = new URLSearchParams();
                 params.append("id", id);
 
-            const response = await api.get(`/plates/${id}`)
-            setStates(response);
+                const response = await api.get(`/plates/${id}`)
+                setPlates(response.data)
+                setPlateTitle(response.data.plate_title)
+                setPlatePrice(response.data.plate_price)
+                setPlateDescription(response.data.plate_description);
+                setPlateCategory(response.data.plate_category)
 
-            } catch (error) {
+            }catch (error) {
                 console.error(error)
 
             }
         };
-        
+
         async function fetchIngredients() {
             const response = await api.get("ingredients")
+            
             const ingredients = response.data;  
-            const ingredientsOfPlate = ingredients.filter((ingredient) => ingredient.plate_id === plates.id)
+            
+            console.log(ingredients)
+            const ingredientsOfPlate = ingredients.filter((ingredient) => ingredient.plate_id === id)
+            console.log(id)
             setIngredients(ingredientsOfPlate)
-
             
         };
         
-        fetchPlates();
         fetchIngredients();
+        fetchPlates();
     }, [id])
 
     function handleInsertAvatar(event) {
@@ -71,7 +73,7 @@ export function AdmEditFood() {
     }
 
     function handleAddIngredient() {
-
+    
         if (newIngredient == "") {
             alert("Não é possivel cadastrar um campo vazio")
         }
@@ -80,23 +82,28 @@ export function AdmEditFood() {
             setNewIngredient("");
         }
     }
+    
+    function handleDeleteIngredient(deleted) {
+        setIngredients(prevState => prevState.filter((ingredient) => ingredient !== deleted))
+    }
 
+    
     async function handleUpdatePlate() {
         if (!plateTitle) {
             alert("Digite um nome para seu prato")
             return
         }
-
+        
         if (newIngredient) {
             alert(`você inseriu um texto no campo de ingredientes, mas não ciclou em "adicionar". Clique em "adicionar" ou deixe o campo vazio`)
             return
         }
-
+        
         if (!platePrice) {
             alert("Defina um preço para seu prato")
             return
         }
-
+        
         try {
             let avatarToSend;
             if(avatarFile){
@@ -106,44 +113,37 @@ export function AdmEditFood() {
                 const data= await response.blob()
                 avatarToSend = new File([data], "avatar.jpg")
             }
-                           
-                const formData = new FormData();
-                //criando objeto para enviar dados de um formulário por meio de um requisição HTTP.
-                formData.append("plate_title", plateTitle);
-                formData.append("plate_category", plateCategory);
-                formData.append("plate_description", plateDescription);
-                formData.append("plate_price", platePrice);
-                ingredients.forEach(ingredient => formData.append("ingredients", ingredient));
-                formData.append("avatar", avatarToSend)
-                //  FormData  permite o envio de dados de formulário que incluem tanto campos de texto simples quanto arquivos binários, como imagens.
-                console.log(formData)
-
-                await api.put(`/plates/${id}`, formData, {
-                    headers: {
-                        'Content-type': 'multipart/form-data'
-                    }
-                });
             
-            alert("Prato atualizado com sucesso")
-        } catch (error) {
-            if (error.response) {
-                alert(error.response.data.message)
-            } else {
-                alert("Erro ao inserir prato na tabela")
+            const formData = new FormData();
+            //criando objeto para enviar dados de um formulário por meio de um requisição HTTP.
+            formData.append("plate_title", plateTitle);
+            formData.append("plate_category", plateCategory);
+            formData.append("plate_description", plateDescription);
+            formData.append("plate_price", platePrice);
+            ingredients.forEach(ingredient => formData.append("ingredients", ingredient));
+            formData.append("avatar", avatarFile)
+            //  FormData  permite o envio de dados de formulário que incluem tanto campos de texto simples quanto arquivos binários, como imagens.
+            console.log(formData)
+            
+            await api.put(`/plates/${id}`, formData, {
+                headers: {
+                    'Content-type': 'multipart/form-data'
+                }
+                });
+                
+                alert("Prato atualizado com sucesso")
+            } catch (error) {
+                if (error.response) {
+                    alert(error.response.data.message)
+                } else {
+                    alert("Erro ao inserir prato na tabela")
+                }
             }
-        }
     }
-
-    function handleBack() {
-        navigate(-1)
-    }
-
-    function handleDeleteIngredient(deleted) {
-        setIngredients(prevState => prevState.filter((ingredient) => ingredient !== deleted))
-    }
-
+        
+       
     return (
-        <Container>
+            <Container>
             < Header type="admHeader">
                 <div className="searchInput">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,12 +169,11 @@ export function AdmEditFood() {
                         </svg>
 
                     </div>
-
                     <span>voltar</span>
 
                 </button>
 
-                <h1>Novo prato</h1>
+                <h1>Editar prato</h1>
 
                 <form action="newPlateForm">
 
@@ -215,7 +214,6 @@ export function AdmEditFood() {
                                         value={plateTitle}
                                         
                                     />
-
                                 </div>
                             </label>
 
@@ -245,8 +243,6 @@ export function AdmEditFood() {
                                                     value={ingredient.name}
                                                     onClick={() => { handleDeleteIngredient(ingredient) }}
                                                     onChange={(e) => setNewIngredient(e.target.value)}
-                                                  
-
                                                 />
                                             ))
                                         }

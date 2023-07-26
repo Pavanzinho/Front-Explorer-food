@@ -22,8 +22,13 @@ export function AdmDetails() {
     }
 
     function handleEditFood(id) {
+        navigate(`/editfood/${id}`, { state:  plate  })
+    }
 
-        navigate(`/editfood/${id}`, { state: { id } })
+    async function handleDeleteFood(id){
+        await api.delete(`/plates/${id}`)
+        navigate("/")
+
     }
 
     useEffect(() => {
@@ -99,7 +104,6 @@ export function AdmDetails() {
                                         >
                                             <span>{ingredient.name}</span>
                                         </div>
-
                                     )
                                 })
                             }
@@ -112,6 +116,14 @@ export function AdmDetails() {
                             >
                                 <div>
                                     <span>Editar prato </span>
+                                </div>
+                            </RedButton>
+
+                            <RedButton
+                                onClick={() => handleDeleteFood(plate.id)}
+                            >
+                                <div>
+                                    <span>Excluir prato </span>
                                 </div>
                             </RedButton>
                         </div>

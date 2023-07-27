@@ -44,7 +44,7 @@ export const Container = styled.div`
         align-items: center;
         margin: 0 0 0 auto;
         animation-name: go-to-initial-title;
-        animation-duration: 6s;
+        animation-duration: 2s;
 
         @keyframes go-to-initial-title {
           0% {
@@ -68,7 +68,7 @@ export const Container = styled.div`
       gap: 3.2rem;
       justify-content: center;
       animation-name: go-to-initial-form;
-      animation-duration: 3s;
+      animation-duration: 1s;
       animation-delay: 0s;
 
       @keyframes go-to-initial-form {

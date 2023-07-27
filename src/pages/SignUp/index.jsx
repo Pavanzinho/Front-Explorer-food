@@ -13,7 +13,7 @@ export function SignUp() {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
-    
+
     const [isAdm, setIsAdm] = useState(false)
 
     async function handleSignUp() {
@@ -40,7 +40,7 @@ export function SignUp() {
         navigate("/")
     }
 
-    function handleSubmit(event){
+    function handleSubmit(event) {
         event.preventDefault()
         handleSignUp()
     }

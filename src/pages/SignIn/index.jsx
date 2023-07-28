@@ -13,7 +13,8 @@ export function SignIn() {
     const navigate = useNavigate();
     const { signIn } = useAuth();
 
-    function handleSignIn() {
+    function handleSignIn(event) {
+        event.preventDefault()
         signIn({ email, password })
     }
 
@@ -33,7 +34,7 @@ export function SignIn() {
 
                     <h1>food explorer</h1>
                 </div>
-                <form >
+                <form onSubmit={handleSignIn}>
 
                     <h1>Faça login</h1>
 

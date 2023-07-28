@@ -16,8 +16,8 @@ export function SignUp() {
 
     const [isAdm, setIsAdm] = useState(false)
 
-    async function handleSignUp() {
-
+    async function handleSignUp(event) {
+        event.preventDefault()
 
         if (!name || !password || !email) {
             return alert("Todos os campos precisam ser preenchidos")
@@ -52,7 +52,7 @@ export function SignUp() {
                     <h1>food explorer</h1>
                 </div>
 
-                <form action="" >
+                <form onSubmit={handleSignUp} >
 
                     <h1>Crie sua conta</h1>
                     <Input

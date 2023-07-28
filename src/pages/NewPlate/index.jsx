@@ -39,7 +39,8 @@ export function NewPlate() {
 
     }
 
-    async function handleNewPlate() {
+    async function handleNewPlate(event) {
+        event.preventDefault()
         if (!plateTitle) {
             alert("Digite um nome para seu prato")
             return
@@ -105,10 +106,6 @@ export function NewPlate() {
         setError(isNaN(Number(inputValue)));
     }
 
-    function handleSubmit(event){
-        event.preventDefault()
-        handleNewPlate()
-    }
 
 
 
@@ -147,7 +144,7 @@ export function NewPlate() {
 
                 <h1>Novo prato</h1>
 
-                <form action="newPlateForm" onSubmit={handleSubmit}>
+                <form action="newPlateForm" onSubmit={handleNewPlate}>
 
                     <fieldset>
 

@@ -21,14 +21,9 @@ export function Details() {
         navigate(-1)
     }
 
-    function handleEditFood(id) {
-
-        navigate(`/editfood/${id}`, { state: { id } })
-    }
-
     useEffect(() => {
         async function fetchIngredients() {
-            const response = await api.get("ingredients/client")
+            const response = await api.get("ingredients")
             console.log(response.data)
             const ingredients = response.data;
 

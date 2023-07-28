@@ -16,12 +16,17 @@ export function AdmDetails() {
     const location = useLocation()
     const { plate } = location.state
 
+    const { id } =plate 
+    const idJSON=JSON.stringify(id)
+
 
     function handleBack() {
         navigate(-1)
     }
 
     function handleEditFood(id) {
+        
+        localStorage.setItem('plateId',idJSON)
         navigate(`/editfood/${id}`, { state:  plate  })
     }
 

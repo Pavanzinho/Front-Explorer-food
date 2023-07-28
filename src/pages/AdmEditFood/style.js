@@ -200,6 +200,7 @@ export const Container = styled.div`
                 display: flex;
                 align-items: center;
                 padding: 1.2rem 1.8rem;
+                position: relative;
 
                 @media ${device.desktop} {
                   display: flex;
@@ -223,6 +224,7 @@ export const Container = styled.div`
                   font-family: "Poppins", sans-serif;
                   font-weight: 500;
                   color: white;
+                  z-index: 1;
 
                   @media ${device.desktop} {
                     position: absolute;
@@ -239,6 +241,9 @@ export const Container = styled.div`
                   font-family: "Poppins", sans-serif;
                   font-weight: 500;
                   color: white;
+
+                  position: absolute;
+                  z-index: 0;
 
                   @media ${device.desktop} {
                     width: 100%;

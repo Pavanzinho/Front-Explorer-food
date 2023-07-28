@@ -245,6 +245,7 @@ export const Container = styled.div`
                   padding: 0;
                   text-align: start;
                   width: 100%;
+                  z-index: 1;
 
                   @media ${device.desktop} {
                     position: absolute;
@@ -262,6 +263,7 @@ export const Container = styled.div`
                   font-weight: 500;
                   color: white;
                   position: absolute;
+                  z-index: 0;
 
                   @media ${device.desktop} {
                     width: 100%;

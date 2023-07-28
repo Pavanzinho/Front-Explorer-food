@@ -91,6 +91,7 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
+        width: 100%;
 
         @media ${device.desktop} {
           border: none;
@@ -98,6 +99,10 @@ export const Container = styled.div`
           flex-direction: column;
           gap: 2.4rem;
           width: 100%;
+        }
+
+        @media (max-width: 420px) {
+          max-width: 100%;
         }
 
         label {
@@ -115,6 +120,10 @@ export const Container = styled.div`
             font-size: 1.6rem;
             color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_400};
             line-height: 1.6rem;
+          }
+
+          @media (max-width: 420px) {
+            max-width: 100%;
           }
 
           div {
@@ -139,9 +148,17 @@ export const Container = styled.div`
             justify-content: space-between;
           }
 
+          @media (max-width: 420px) {
+            max-width: 100%;
+          }
+
           label:nth-of-type(1) {
             @media ${device.desktop} {
               width: 20%;
+            }
+
+            @media (max-width: 420px) {
+              max-width: 100%;
             }
 
             .inputContainer {
@@ -161,6 +178,10 @@ export const Container = styled.div`
                 padding: 1.2rem 1.4rem;
                 display: flex;
                 align-items: center;
+              }
+
+              @media (max-width: 420px) {
+                width: 100%;
               }
 
               input {
@@ -193,6 +214,7 @@ export const Container = styled.div`
                 @media ${device.desktop} {
                   background: transparent;
                   border: none;
+                  width: 100%;
                 }
               }
 
@@ -204,6 +226,7 @@ export const Container = styled.div`
                 display: flex;
                 align-items: center;
                 padding: 1.2rem 1.8rem;
+                position: relative;
 
                 @media ${device.desktop} {
                   display: flex;
@@ -221,6 +244,8 @@ export const Container = styled.div`
                   margin: 0;
                   padding: 0;
                   text-align: start;
+                  width: 100%;
+
                   @media ${device.desktop} {
                     position: absolute;
                     opacity: 0;
@@ -229,13 +254,14 @@ export const Container = styled.div`
                   }
                 }
                 span {
-                  width: 100%;
+                  width: 200px;
                   line-height: 2.4rem;
                   font-size: 1.4rem;
 
                   font-family: "Poppins", sans-serif;
                   font-weight: 500;
                   color: white;
+                  position: absolute;
 
                   @media ${device.desktop} {
                     width: 100%;
@@ -366,6 +392,7 @@ export const Container = styled.div`
                 @media ${device.desktop} {
                   background: transparent;
                   border: none;
+                  width: 100%;
                 }
               }
 

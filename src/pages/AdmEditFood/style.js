@@ -84,6 +84,7 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
+        width: 100%;
 
         @media ${device.desktop} {
           border: none;
@@ -100,6 +101,7 @@ export const Container = styled.div`
           font-size: 1.6rem;
           color: ${({ theme }) => theme.COLORS.LIGHT_LIGHT_400};
           line-height: 1.6rem;
+          width: 100%;
 
           @media ${device.desktop} {
             display: flex;
@@ -123,6 +125,7 @@ export const Container = styled.div`
           display: flex;
           flex-direction: column;
           gap: 2.4rem;
+          width: 100%;
 
           @media ${device.desktop} {
             display: flex;
@@ -214,6 +217,13 @@ export const Container = styled.div`
                   margin: 0;
                   padding: 0;
                   text-align: start;
+                  line-height: 2.4rem;
+                  font-size: 1.4rem;
+
+                  font-family: "Poppins", sans-serif;
+                  font-weight: 500;
+                  color: white;
+
                   @media ${device.desktop} {
                     position: absolute;
                     opacity: 0;

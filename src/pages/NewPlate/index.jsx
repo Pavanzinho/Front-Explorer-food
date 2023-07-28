@@ -163,13 +163,13 @@ export function NewPlate() {
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M1 14.9241C1.55228 14.9241 2 15.3718 2 15.9241V22.9241H22V15.9241C22 15.3718 22.4477 14.9241 23 14.9241C23.5523 14.9241 24 15.3718 24 15.9241V22.9241C24 23.4545 23.7893 23.9632 23.4142 24.3383C23.0391 24.7134 22.5304 24.9241 22 24.9241H2C1.46957 24.9241 0.960861 24.7134 0.585787 24.3383C0.210714 23.9632 0 23.4545 0 22.9241V15.9241C0 15.3718 0.447715 14.9241 1 14.9241Z" fill="white" />
                                             </svg>
 
-                                            <span>Selecionar imagem</span>
-
                                             <input
                                                 type="file"
                                                 id="avatar"
                                                 onChange={handleInsertAvatar}
+                                                placeholder='Selecionar imagem'
                                             />
+                                            <span>Selecionar imagem</span>
                                         </div>
                                     </button>
                                 </div>

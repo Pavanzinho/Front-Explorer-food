@@ -40,10 +40,6 @@ export function SignUp() {
         navigate("/")
     }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        handleSignUp()
-    }
 
     return (
         <Container>
@@ -56,7 +52,7 @@ export function SignUp() {
                     <h1>food explorer</h1>
                 </div>
 
-                <form action="" onSubmit={handleSubmit}>
+                <form action="" >
 
                     <h1>Crie sua conta</h1>
                     <Input
